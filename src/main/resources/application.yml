@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: item_route
+        uri: http://localhost:9001
+        predicates:
+        - Path=/callquality/**
+        
+      - id: user_route
+        uri: http://localhost:9003
+        predicates:
+        - Path=/message/**
